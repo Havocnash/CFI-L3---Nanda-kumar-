@@ -1,0 +1,118 @@
+Turtle 1 : Spiralling Polygon 
+import turtle    
+sides=5
+n = 7 
+pen = turtle.Turtle()  
+for i in range(n*sides):   
+    pen.forward(i * 10)  
+    pen.right(360 / sides)  
+turtle.done()
+
+Turtle 2 - Shape inside shape                                                                                                                                                                                                             
+import turtle
+def form_hex(side):
+    for i in range(6):
+        my_pen.fd(side)
+        my_pen.left(300)
+        side -= 2
+ 
+ 
+tut = turtle.Screen()
+tut.bgcolor("green")
+tut.title("Turtle")
+ 
+my_pen = turtle.Turtle()
+my_pen.color("orange")
+ 
+tut = turtle.Screen()
+ 
+side = 120
+ 
+for i in range(5):
+    form_hex(side)
+    side -= 12
+
+Turtle 3 : Audi car logo                                                                                                                                                                                                                                        import turtle
+vr = turtle.Turtle()
+vr.pensize(7)
+turtle.Screen().bgcolor("black")
+vr.pencolor("#D0CFCF")
+vr.speed(10) 
+
+for i in range(4):
+  vr.penup()
+window.
+  vr.goto(i*70, 0)
+
+  vr.pendown()
+  vr.circle(50)
+
+
+vr.color("white")
+vr.penup()
+vr.goto(77, -40)
+vr.pendown()
+vr.write("Audi",font=("Arial", 16, "bold","italic"))
+turtle.done()
+
+Design a smart thermostat system that automatically adjusts room temperature based on occupancy and desired comfort settings. The system should monitor room occupancy 
+using motion sensors and adjust the heating or cooling system accordingly. It should maintain a comfortable temperature range when occupants are present and conserve energy
+by adjusting to an energy-saving mode when the room is empty for a specified period.
+
+Algorithm
+Start
+Set up initial temperature settings, occupancy status, and system modes.
+Begin a continuous loop to monitor room occupancy and temperature.
+Check the status of the motion sensor to detect occupancy.
+Occupied State:
+If motion is detected (occupied):
+Check the current temperature.
+Adjust heating or cooling system if the temperature is outside the desired comfort range.
+Continue monitoring occupancy and temperature.
+Vacant State:
+If no motion is detected for a specified period (vacant):
+Activate energy-saving mode (adjust temperature to conserve energy).
+Continue to monitor for motion to switch back to the occupied state.
+End Loop: Loop continues indefinitely to maintain real-time operation.
+
+Code:
+import time
+
+COMFORT_TEMP_MIN = 20.0 
+COMFORT_TEMP_MAX = 25.0 
+VACANT_TIMEOUT = 300  
+
+occupancy_detected = False
+last_motion_time = time.time()
+
+def read_motion_sensor():
+    global occupancy_detected, last_motion_time
+
+    if time.time() - last_motion_time < VACANT_TIMEOUT:
+        occupancy_detected = True
+    else:
+        occupancy_detected = False
+
+def adjust_temperature(current_temp):
+    if current_temp < COMFORT_TEMP_MIN:
+        print(f"Heating activated to reach {COMFORT_TEMP_MIN} °C")
+    elif current_temp > COMFORT_TEMP_MAX:
+        print(f"Cooling activated to reach {COMFORT_TEMP_MAX} °C")
+    else:
+        print("Temperature is within comfort range")
+
+def activate_energy_saving_mode():
+    print("Energy-saving mode activated")
+
+while True:
+    read_motion_sensor()
+
+    if occupancy_detected:
+        current_temperature = 22.0  # Simulate current room temperature
+        adjust_temperature(current_temperature)
+    else:
+        activate_energy_saving_mode()
+    
+    time.sleep(60)    
+
+https://github.com/Havocnash/COI-L2---Nanda-kumar-.git
